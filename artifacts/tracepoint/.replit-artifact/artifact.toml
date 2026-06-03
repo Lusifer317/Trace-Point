@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "TracePoint Intelligence"
+version = "1.0.0"
+id = "artifacts/tracepoint"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22739
+
+[services.development]
+run = "pnpm --filter @workspace/tracepoint run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/tracepoint", "run", "build" ]
+publicDir = "artifacts/tracepoint/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22739"
+BASE_PATH = "/"

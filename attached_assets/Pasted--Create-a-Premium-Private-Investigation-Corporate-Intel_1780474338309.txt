@@ -1,0 +1,241 @@
+
+Create a Premium Private Investigation & Corporate Intelligence Agency Website
+Create a modern, premium, highly professional website for a private investigation and corporate intelligence agency based in Hyderabad, India.
+Agency Name: TracePoint Intelligence
+Tagline: Truth. Evidence. Confidence.
+The website must look like a combination of a high-end intelligence firm, cyber investigation agency, and corporate risk consultancy—not a cheap detective agency.
+Avoid cliché detective elements such as magnifying glasses, trench coats, cartoon spies, handcuffs, police tape, or old detective imagery.
+The design should feel like:
+Modern intelligence operations
+Corporate investigations
+Cyber forensics
+Risk management
+Due diligence consulting
+Premium legal support services
+Think:
+Intelligence agency aesthetic
+Dark luxury design
+Sophisticated cyber investigations
+Executive-level consulting
+
+Design Style
+Create a unique visual identity inspired by:
+Dark matte black backgrounds
+Deep navy blue accents
+Gold highlights
+Glassmorphism effects
+Animated intelligence dashboards
+World maps
+Network graphs
+Digital forensic interfaces
+Secure communication themes
+Typography:
+Modern sans-serif
+Professional
+Elegant
+High readability
+The website should look more expensive than typical consulting firms.
+
+Homepage Hero Section
+Full-screen hero section.
+Background:
+Animated world intelligence map.
+Subtle moving data lines.
+Global network visualization.
+Headline:
+"Uncover What Others Miss."
+Subheadline:
+"Corporate Intelligence, Cyber Investigations, Due Diligence & Professional Private Investigation Services Across India."
+Buttons:
+Primary:
+Request Consultation
+Secondary:
+Explore Services
+Include a sophisticated animated intelligence dashboard on the right side.
+
+Services Section
+Display services as premium cards.
+Corporate Intelligence
+Due Diligence
+Vendor Verification
+Executive Background Checks
+Investment Risk Assessment
+Corporate Investigations
+Private Investigation
+Matrimonial Investigations
+Missing Person Investigations
+Asset Verification
+Surveillance Operations
+Background Verification
+Cyber Investigations
+Digital Forensics
+Email Fraud Investigation
+Insider Threat Investigations
+Cyber Incident Investigation
+Data Theft Investigations
+Insurance Investigations
+Fraud Detection
+Claims Verification
+Evidence Collection
+Risk Assessment
+Each service card should have:
+Custom futuristic icon
+Hover animations
+Detailed modal popup
+
+Why Choose Us
+Premium statistics section.
+Display:
+500+
+Investigations Conducted
+95%
+Client Satisfaction
+24/7
+Response Team
+100%
+Confidentiality
+Add elegant animated counters.
+
+Investigation Process
+Display a timeline.
+Step 1:
+Initial Consultation
+Step 2:
+Risk Assessment
+Step 3:
+Evidence Collection
+Step 4:
+Analysis & Verification
+Step 5:
+Professional Reporting
+Step 6:
+Case Closure
+Include animated progression.
+
+Intelligence Dashboard Section
+Create a visually stunning intelligence command center.
+Show:
+Risk score widgets
+Threat monitoring
+Case analytics
+Investigation workflow
+Global intelligence feeds
+Use realistic but fictional data.
+No actual security vulnerabilities.
+
+Industries We Serve
+Cards for:
+Healthcare
+Insurance
+Financial Services
+Legal Firms
+Technology Companies
+Startups
+Manufacturing
+Government Contractors
+Include elegant icons.
+
+Case Studies Section
+Display 6 sample case studies.
+Examples:
+Corporate Fraud Investigation
+Recovered evidence of internal financial misconduct.
+Vendor Due Diligence
+Prevented high-risk supplier engagement.
+Cyber Forensics Case
+Identified insider data exfiltration activity.
+Insurance Fraud Case
+Verified fraudulent claim activity.
+Each case study should be anonymized.
+
+Testimonials
+Luxury testimonial carousel.
+Use realistic placeholder clients.
+Display:
+Corporate clients
+Law firms
+Insurance partners
+Include profile photos generated with AI.
+
+About Us
+Professional corporate profile.
+Mission:
+Deliver evidence-driven intelligence services with integrity, discretion, and professionalism.
+Vision:
+Become India's most trusted private investigation and corporate intelligence firm.
+Values:
+Confidentiality
+Integrity
+Precision
+Professionalism
+Accountability
+
+Contact Section
+Premium consultation form.
+Fields:
+Name
+Company
+Email
+Phone
+Investigation Type
+Message
+Buttons:
+Request Consultation
+Schedule a Confidential Discussion
+
+Footer
+Sections:
+Services
+Industries
+Resources
+Contact
+Legal
+Include:
+Privacy Policy
+Terms of Service
+Confidentiality Statement
+
+Special Features
+Implement:
+✓ Dark/Light Mode
+✓ Smooth Page Animations
+✓ Scroll-triggered Effects
+✓ Animated Intelligence Map
+✓ Interactive Network Visualization
+✓ Glassmorphism Cards
+✓ Mobile Responsive Design
+✓ SEO Optimized
+✓ Fast Loading
+✓ Accessibility Compliant
+✓ Premium Loading Screen
+✓ Investigation-themed Cursor Effects
+✓ Secure Client Portal UI Preview
+
+Color Palette
+Primary:
+#0B0F19
+Secondary:
+#111827
+Accent Gold:
+#D4AF37
+Accent Blue:
+#2563EB
+Text:
+#F8FAFC
+Muted:
+#94A3B8
+
+Technical Requirements
+Next.js 15
+React 19
+TypeScript
+Tailwind CSS
+Framer Motion
+GSAP Animations
+Lucide Icons
+Fully Responsive
+Production Ready
+SEO Optimized
+Lighthouse Score Above 95
+Create all pages, components, animations, content, layouts, illustrations, and UI elements. The final result should look like a premium intelligence agency website worth ₹10 lakh+ in design value and capable of competing with top global corporate intelligence firms.
+
