@@ -7,7 +7,7 @@ export default function CaseStudies() {
       cat: "Corporate Fraud",
       title: "Internal Financial Misconduct",
       desc: "Recovered deleted communications and traced offshore accounts to prove embezzlement by a regional director.",
-      outcome: "₹4.2Cr recovered. Prosecution successful."
+      outcome: "₹4.2 Cr recovered. Prosecution successful."
     },
     {
       cat: "Due Diligence",
@@ -16,29 +16,29 @@ export default function CaseStudies() {
       outcome: "Contract aborted. Risk averted."
     },
     {
+      cat: "Online Money Recovery",
+      title: "UPI Impersonation Fraud",
+      desc: "A Hyderabad-based retailer received a call from someone posing as a bank official asking to 'reverse an erroneous credit.' They were guided into approving a screen share and transferring ₹11.8 Lakhs. We traced the beneficiary chain across three mule accounts, filed a complaint with the National Cybercrime Portal, and coordinated a bank freeze request within 36 hours.",
+      outcome: "₹9.4 Lakhs frozen and recovered. FIR filed."
+    },
+    {
+      cat: "Sextortion",
+      title: "WhatsApp Honey Trap",
+      desc: "A mid-level executive was befriended on Instagram by a profile that quickly moved the conversation to WhatsApp, recorded an intimate video call, and demanded ₹3 Lakhs with threats to forward the recording to his employer and family. We identified the perpetrator's digital footprint, advised against payment, helped draft a legal response, and supported an FIR that led to the suspect's arrest in another state.",
+      outcome: "Perpetrator arrested. Harassment stopped."
+    },
+    {
+      cat: "Investment Scam",
+      title: "Fake Trading Platform",
+      desc: "A client invested ₹18 Lakhs into a platform promoted via a WhatsApp group that showed consistent 'returns' on a custom app. When she attempted withdrawal, the platform disappeared. We traced the domain registrations, payment gateways, and call centre SIM cards to operators in Rajasthan, and compiled a comprehensive FIR dossier.",
+      outcome: "FIR filed. Case referred to ED for asset recovery."
+    },
+    {
       cat: "Cyber Forensics",
       title: "Insider Data Exfiltration",
-      desc: "Analyzed server logs to identify a departing engineer transferring proprietary algorithms to a personal cloud.",
-      outcome: "Perpetrator identified. IP secured."
+      desc: "Analyzed server logs to identify a departing engineer transferring proprietary algorithms to a personal cloud storage account over a period of three weeks.",
+      outcome: "Perpetrator identified. IP secured. Employment terminated for cause."
     },
-    {
-      cat: "Insurance Fraud",
-      title: "Fabricated Disability Claim",
-      desc: "Conducted physical surveillance and social media analysis to prove a claimant was actively participating in contact sports.",
-      outcome: "Claim denied. Fraud documented."
-    },
-    {
-      cat: "Executive Check",
-      title: "Undisclosed Liabilities",
-      desc: "Discovered a CEO candidate's involvement in an ongoing class-action lawsuit under a different legal entity.",
-      outcome: "Offer rescinded. Partnership dissolved."
-    },
-    {
-      cat: "Matrimonial",
-      title: "Asset Verification",
-      desc: "Located hidden real estate properties and undisclosed business equity prior to high-net-worth marriage proceedings.",
-      outcome: "Assets documented. Client protected."
-    }
   ];
 
   return (
@@ -47,7 +47,10 @@ export default function CaseStudies() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">Case Studies</h2>
-            <p className="text-muted-foreground">De-identified summaries of recent operational successes. Real names and identifying details have been removed to protect client confidentiality.</p>
+            <p className="text-muted-foreground">
+              De-identified summaries of recent cases. All names, dates, and identifying details
+              have been removed or altered to protect client confidentiality.
+            </p>
           </div>
         </div>
 
@@ -55,11 +58,11 @@ export default function CaseStudies() {
           {cases.map((c, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-card border border-border rounded-lg overflow-hidden group"
+              transition={{ delay: i * 0.07 }}
+              className="bg-card border border-border rounded-lg overflow-hidden"
             >
               <div className="p-8">
                 <div className="text-xs font-mono font-semibold text-primary uppercase tracking-wider mb-3">
@@ -72,9 +75,9 @@ export default function CaseStudies() {
                   {c.desc}
                 </p>
                 <div className="p-4 bg-secondary rounded flex items-start gap-3 border border-white/5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
                   <p className="text-sm font-medium text-foreground">
-                    <span className="text-muted-foreground font-normal">Outcome: </span> 
+                    <span className="text-muted-foreground font-normal">Outcome: </span>
                     {c.outcome}
                   </p>
                 </div>

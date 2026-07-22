@@ -18,7 +18,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-sm font-medium text-primary uppercase tracking-widest mb-6"
           >
-            Hyderabad, India — Est. 2014
+            Hyderabad, India — Est. 2025
           </motion.p>
 
           <motion.h1
