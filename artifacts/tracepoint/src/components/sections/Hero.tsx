@@ -70,7 +70,6 @@ export default function Hero() {
           >
             {[
               { value: "500+", label: "Cases handled" },
-              { value: "10+", label: "Years operating" },
               { value: "24/7", label: "Client access" },
             ].map((stat, i) => (
               <div key={i}>
