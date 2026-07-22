@@ -27,7 +27,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-white/5 py-3 shadow-sm"
+          ? "bg-background/90 backdrop-blur-md border-b border-border py-3"
           : "bg-transparent py-5"
       }`}
     >
@@ -35,7 +35,7 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 group">
           <div className="text-xl md:text-2xl font-serif font-bold tracking-wider text-foreground">
-            Trace<span className="text-primary group-hover:text-white transition-colors duration-300">Point</span>
+            Trace<span className="text-primary">Point</span>
           </div>
         </a>
 
@@ -46,26 +46,26 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors"
+                className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
               >
                 {link.name}
               </a>
             ))}
           </div>
 
-          <div className="flex items-center gap-4 border-l border-white/10 pl-6">
+          <div className="flex items-center gap-4 border-l border-border pl-6">
             <button
               onClick={toggleTheme}
-              className="text-foreground/70 hover:text-primary transition-colors p-2"
+              className="text-foreground/60 hover:text-foreground transition-colors p-2"
               aria-label="Toggle theme"
             >
               {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
             </button>
             <a
               href="#contact"
-              className="px-5 py-2.5 bg-primary text-primary-foreground text-sm font-semibold rounded hover:bg-primary/90 transition-colors shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:shadow-[0_0_20px_rgba(212,175,55,0.5)]"
+              className="px-5 py-2.5 bg-primary text-primary-foreground text-sm font-semibold rounded hover:bg-primary/90 transition-colors"
             >
-              Request Consultation
+              Get in Touch
             </a>
           </div>
         </div>
@@ -74,7 +74,7 @@ export default function Navbar() {
         <div className="flex md:hidden items-center gap-4">
           <button
             onClick={toggleTheme}
-            className="text-foreground/70 hover:text-primary transition-colors p-2"
+            className="text-foreground/60 hover:text-foreground transition-colors p-2"
             aria-label="Toggle theme"
           >
             {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
@@ -95,7 +95,7 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="text-base font-medium text-foreground/80 hover:text-primary transition-colors py-2 border-b border-border/50"
+              className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors py-2 border-b border-border/50"
               onClick={() => setMobileMenuOpen(false)}
             >
               {link.name}
@@ -106,7 +106,7 @@ export default function Navbar() {
             onClick={() => setMobileMenuOpen(false)}
             className="mt-4 w-full text-center px-5 py-3 bg-primary text-primary-foreground font-semibold rounded hover:bg-primary/90 transition-colors"
           >
-            Request Consultation
+            Get in Touch
           </a>
         </div>
       )}

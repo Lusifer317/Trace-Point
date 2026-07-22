@@ -2,59 +2,80 @@ import React from "react";
 import { motion } from "framer-motion";
 
 export default function About() {
+  const team = [
+    {
+      role: "Director of Investigations",
+      background: "Former IPS officer with 18 years in economic offences and organised crime units.",
+    },
+    {
+      role: "Head of Digital Forensics",
+      background: "Certified CHFI examiner. Previously led cyber forensics for a national insurance group.",
+    },
+    {
+      role: "Senior Corporate Analyst",
+      background: "Decade of due diligence work for private equity firms across South and Southeast Asia.",
+    },
+  ];
+
   return (
     <section id="about" className="py-24 bg-background">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
-          
-          <div className="w-full lg:w-1/2 space-y-8">
+        <div className="flex flex-col lg:flex-row gap-16">
+          <div className="w-full lg:w-1/2 space-y-6">
             <div>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">The Agency</h2>
-              <div className="w-20 h-1 bg-primary mb-6" />
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">About the Firm</h2>
+              <div className="w-16 h-0.5 bg-primary" />
             </div>
-            
+
             <p className="text-muted-foreground leading-relaxed">
-              TracePoint Intelligence is a premier private investigation and corporate risk mitigation firm based in Hyderabad, India. We specialize in providing actionable, legally-admissible intelligence to corporate legal departments, HR divisions, and private individuals.
-            </p>
-            
-            <p className="text-muted-foreground leading-relaxed">
-              Our team consists of former law enforcement officers, certified digital forensics experts, and seasoned corporate analysts. We operate with strict adherence to Indian law while employing state-of-the-art methodology to uncover facts that protect our clients' interests.
+              TracePoint Intelligence is a licensed private investigation and corporate risk firm
+              headquartered in Hyderabad. Since 2014, we have served legal departments,
+              HR teams, financial institutions, and private clients who need reliable, court-ready findings.
             </p>
 
-            <div className="pt-6">
-              <h3 className="font-serif font-semibold text-foreground mb-4">Core Values</h3>
-              <div className="flex flex-wrap gap-3">
-                {["Confidentiality", "Integrity", "Precision", "Professionalism", "Accountability"].map((val, i) => (
-                  <span key={i} className="px-4 py-2 bg-secondary border border-border text-sm text-foreground rounded-full">
-                    {val}
-                  </span>
-                ))}
-              </div>
+            <p className="text-muted-foreground leading-relaxed">
+              Our investigators include former law enforcement officers, certified digital forensics
+              examiners, and corporate analysts. Every case is handled within the boundaries of Indian law,
+              with findings documented to evidentiary standard.
+            </p>
+
+            <div className="pt-4">
+              <p className="text-sm font-medium text-foreground mb-3">We are known for:</p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">–</span>
+                  Strict non-disclosure from first contact
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">–</span>
+                  Reports written for use in legal proceedings
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">–</span>
+                  Operations across all major Indian cities
+                </li>
+              </ul>
             </div>
           </div>
 
-          {/* Abstract Illustration */}
-          <div className="w-full lg:w-1/2 flex justify-center">
-            <motion.div 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px]"
-            >
-              {/* Concentric circles representing intelligence gathering */}
-              <div className="absolute inset-0 rounded-full border border-border/50 animate-[spin_60s_linear_infinite]" />
-              <div className="absolute inset-4 rounded-full border border-primary/20 animate-[spin_40s_linear_infinite_reverse]" />
-              <div className="absolute inset-12 rounded-full border border-accent/20 animate-[spin_30s_linear_infinite]" />
-              <div className="absolute inset-24 rounded-full border border-border/80 border-dashed" />
-              
-              {/* Center point */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-primary rounded-full shadow-[0_0_20px_rgba(212,175,55,0.8)]" />
-              
-              {/* Scanning line */}
-              <div className="absolute top-1/2 left-1/2 w-1/2 h-0.5 bg-gradient-to-r from-primary to-transparent origin-left animate-[spin_4s_linear_infinite]" />
-            </motion.div>
+          <div className="w-full lg:w-1/2">
+            <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-widest mb-8">Key Team Members</h3>
+            <div className="space-y-6">
+              {team.map((member, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="border-l-2 border-border pl-6 py-1"
+                >
+                  <h4 className="font-semibold text-foreground mb-1">{member.role}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{member.background}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
-
         </div>
       </div>
     </section>
