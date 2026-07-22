@@ -16,9 +16,9 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
+    { name: "Cyber Fraud Help", href: "#cyber-fraud-help", highlight: true },
     { name: "Services", href: "#services" },
     { name: "Process", href: "#process" },
-    { name: "Industries", href: "#industries" },
     { name: "About", href: "#about" },
     { name: "Contact", href: "#contact" },
   ];
@@ -46,7 +46,11 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
+                className={`text-sm font-medium transition-colors ${
+                  link.highlight
+                    ? "text-primary hover:text-primary/80 font-semibold"
+                    : "text-foreground/70 hover:text-foreground"
+                }`}
               >
                 {link.name}
               </a>

@@ -4,6 +4,7 @@ import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
 import Stats from "@/components/sections/Stats";
 import Process from "@/components/sections/Process";
+import CyberFraudHelp from "@/components/sections/CyberFraudHelp";
 import Industries from "@/components/sections/Industries";
 import CaseStudies from "@/components/sections/CaseStudies";
 import Testimonials from "@/components/sections/Testimonials";
@@ -17,6 +18,7 @@ export default function Home() {
       <Navbar />
       <main className="flex-grow">
         <Hero />
+        <CyberFraudHelp />
         <Services />
         <Stats />
         <Process />
