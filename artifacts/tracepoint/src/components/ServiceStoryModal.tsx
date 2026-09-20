@@ -37,6 +37,8 @@ export default function ServiceStoryModal({ service, onClose }: Props) {
         return () => clearTimeout(t);
       }
     }
+
+    return undefined;
   }, [phase, visibleSteps, service]);
 
   // Close on Escape

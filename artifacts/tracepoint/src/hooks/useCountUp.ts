@@ -3,7 +3,7 @@ import { useInView } from "framer-motion";
 
 export function useCountUp(end: number, duration: number = 2) {
   const [count, setCount] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   useEffect(() => {
