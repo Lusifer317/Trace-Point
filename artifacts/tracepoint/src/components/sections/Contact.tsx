@@ -30,14 +30,23 @@ export default function Contact() {
         }),
       });
 
-      if (!response.ok) {
-        throw new Error("The request could not be submitted.");
+      const contentType = response.headers.get("content-type") ?? "";
+      const result = contentType.includes("application/json")
+        ? await response.json() as { ok?: boolean; error?: string }
+        : null;
+
+      if (!response.ok || result?.ok !== true) {
+        throw new Error(result?.error ?? "The request could not be submitted.");
       }
 
       form.reset();
       setSubmitted(true);
-    } catch {
-      setError("We could not send your request. Please try again or contact us by email.");
+    } catch (submissionError) {
+      setError(
+        submissionError instanceof Error
+          ? submissionError.message
+          : "We could not send your request. Please try again or contact us by email.",
+      );
     } finally {
       setIsSubmitting(false);
     }
