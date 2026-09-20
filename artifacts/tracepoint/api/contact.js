@@ -1,15 +1,3 @@
-import type { IncomingMessage, ServerResponse } from "node:http";
-
-type ContactSubmission = {
-  fullName?: unknown;
-  company?: unknown;
-  email?: unknown;
-  phone?: unknown;
-  investigationType?: unknown;
-  message?: unknown;
-  website?: unknown;
-};
-
 const MAX_BODY_SIZE = 12_000;
 const MAX_MESSAGE_LENGTH = 5_000;
 const validInvestigationTypes = new Set([
@@ -21,12 +9,12 @@ const validInvestigationTypes = new Set([
   "other",
 ]);
 
-function asText(value: unknown, maxLength: number) {
+function asText(value, maxLength) {
   return typeof value === "string" ? value.trim().slice(0, maxLength) : "";
 }
 
-async function readJson(req: IncomingMessage): Promise<ContactSubmission> {
-  const chunks: Buffer[] = [];
+async function readJson(req) {
+  const chunks = [];
   let size = 0;
 
   for await (const chunk of req) {
@@ -36,16 +24,16 @@ async function readJson(req: IncomingMessage): Promise<ContactSubmission> {
     chunks.push(buffer);
   }
 
-  return JSON.parse(Buffer.concat(chunks).toString("utf8")) as ContactSubmission;
+  return JSON.parse(Buffer.concat(chunks).toString("utf8"));
 }
 
-function sendJson(res: ServerResponse, status: number, data: object) {
+function sendJson(res, status, data) {
   res.statusCode = status;
   res.setHeader("Content-Type", "application/json; charset=utf-8");
   res.end(JSON.stringify(data));
 }
 
-export default async function handler(req: IncomingMessage, res: ServerResponse) {
+export default async function handler(req, res) {
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
     return sendJson(res, 405, { error: "Method not allowed" });
