@@ -1,4 +1,3 @@
-const MAX_BODY_SIZE = 12_000;
 const MAX_MESSAGE_LENGTH = 5_000;
 const validInvestigationTypes = new Set([
   "",
@@ -13,23 +12,10 @@ function asText(value, maxLength) {
   return typeof value === "string" ? value.trim().slice(0, maxLength) : "";
 }
 
-async function readJson(req) {
-  const chunks = [];
-  let size = 0;
-
-  for await (const chunk of req) {
-    const buffer = Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk);
-    size += buffer.length;
-    if (size > MAX_BODY_SIZE) throw new Error("Request body is too large");
-    chunks.push(buffer);
-  }
-
-  return JSON.parse(Buffer.concat(chunks).toString("utf8"));
-}
-
 function sendJson(res, status, data) {
   res.statusCode = status;
   res.setHeader("Content-Type", "application/json; charset=utf-8");
+  res.setHeader("Cache-Control", "no-store");
   res.end(JSON.stringify(data));
 }
 
@@ -47,7 +33,12 @@ export default async function handler(req, res) {
   }
 
   try {
-    const body = await readJson(req);
+    // Vercel parses application/json and exposes it through req.body. Reading
+    // the raw stream here would consume an already-parsed request body.
+    const body = req.body;
+    if (!body || typeof body !== "object" || Array.isArray(body)) {
+      return sendJson(res, 400, { error: "Invalid request." });
+    }
     const fullName = asText(body.fullName, 120);
     const company = asText(body.company, 160);
     const email = asText(body.email, 254).toLowerCase();
