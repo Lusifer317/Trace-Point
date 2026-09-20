@@ -73,7 +73,9 @@ export default async function handler(req, res) {
     });
 
     if (!response.ok) {
-      console.error("Supabase contact submission failed", response.status, await response.text());
+      // Avoid writing database response details to function logs, which could
+      // contain schema or implementation information.
+      console.error("Supabase contact submission failed", response.status);
       return sendJson(res, 502, { error: "Unable to store your request." });
     }
 
